@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+// /simple
 const SignUpRouter = require("./routes/signup");
 const PostsRouter = require("./routes/posts");
 const LikesRouter = require("./routes/likes");
