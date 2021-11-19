@@ -35,5 +35,5 @@ app.use("/", CommentRouter);
 app.use("/", ReplyRouter);
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log("Server running on port 3000");
+  console.log(`Server running on port ${port}`);
 });

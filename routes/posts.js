@@ -34,6 +34,27 @@ router.route("/addPost").post((req, res) => {
     .catch((err) => res.json("Account already exist"));
 });
 
+// Route to update a post
+router.route("/post/update=:id").post((req, res) => {
+  Post.findByIdAndUpdate(req.params.id, {
+    body: req.body.body,
+    createdAt: req.body.createdAt,
+  })
+    .then(() => res.json("Post updated!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+
+  // Post.findByIdAndUpdate(req.params.id)
+  //   .then((post) => {
+  //     post.body = req.body.body;
+
+  //     post
+  //       .save()
+  //       .then(() => res.json("Post updated!"))
+  //       .catch((err) => res.status(400).json("Error: " + err));
+  //   })
+  //   .catch((err) => res.status(400).json("Error: " + err));
+});
+
 // Route to delete a post
 router.route("/post/delete=:id").delete((req, res) => {
   Post.findByIdAndDelete(req.params.id)
