@@ -8,6 +8,7 @@ const PostsRouter = require("./routes/posts");
 const LikesRouter = require("./routes/likes");
 const CommentRouter = require("./routes/comments");
 const ReplyRouter = require("./routes/reply");
+const UsersRouter = require("./routes/users");
 
 require("dotenv").config();
 
@@ -33,6 +34,7 @@ app.use("/", PostsRouter);
 app.use("/", LikesRouter);
 app.use("/", CommentRouter);
 app.use("/", ReplyRouter);
+app.use("/", UsersRouter);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log(`Server running on port ${port}`);
