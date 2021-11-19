@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 let Post = require("../models/post.model");
 let Likes = require("../models/likes.model");
 
-// Route to get daily view of a particular user
+// Route to get likes for a particular post
 router.route("/likes/post=:id").get((req, res) => {
   Likes.find({ postId: req.params.id })
     .then((event) => res.json(event))
